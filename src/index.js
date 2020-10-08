@@ -79,6 +79,26 @@ function startGame(board) {
 }
 
 function checkWinner(board) {
+  //check diagonal
+  let a = board.rows[0].cells[0].innerHTML;
+  let b = board.rows[1].cells[1].innerHTML;
+  let c = board.rows[2].cells[2].innerHTML;
+  let d = board.rows[3].cells[3].innerHTML;
+  let e = board.rows[4].cells[4].innerHTML;
+  let f = board.rows[0].cells[4].innerHTML;
+  let g = board.rows[1].cells[3].innerHTML;
+  let h = board.rows[2].cells[2].innerHTML;
+  let x = board.rows[3].cells[1].innerHTML;
+  let y = board.rows[4].cells[0].innerHTML;
+
+  if (a === b && b === c && c === d && d === e) {
+    win(board);
+    alert("VOITTO VASEMMALTE OIKEELLE ALAS VIISTO");
+  } else if (f === g && g === h && h === x && x === y) {
+    win(board);
+    alert("VOITTO VASEMMALTE OIKEELLE YLÖS VIISTO");
+  }
+
   //check for columns
 
   for (var i = 0; i < 5; i++) {
@@ -94,6 +114,7 @@ function checkWinner(board) {
 
     if (a === b && b === c && c === d && d === e) {
       win(board);
+      alert("PYSTYVOITTO!!!");
       break;
     }
   }
@@ -111,26 +132,9 @@ function checkWinner(board) {
 
     if (a === b && b === c && c === d && d === e) {
       win(board);
+      alert("RIVI VOITTO!!!");
       break;
     }
-  }
-
-  //check diagonal
-  let a = board.rows[0].cells[0].innerHTML;
-  let b = board.rows[1].cells[1].innerHTML;
-  let c = board.rows[2].cells[2].innerHTML;
-  let d = board.rows[3].cells[3].innerHTML;
-  let e = board.rows[4].cells[4].innerHTML;
-  let f = board.rows[0].cells[4].innerHTML;
-  let g = board.rows[1].cells[3].innerHTML;
-  let h = board.rows[2].cells[2].innerHTML;
-  let x = board.rows[3].cells[1].innerHTML;
-  let y = board.rows[4].cells[0].innerHTML;
-
-  if (a === b && b === c && c === d && d === e) {
-    win(board);
-  } else if (f === g && g === h && h === x && x === y) {
-    win(board);
   }
 }
 
