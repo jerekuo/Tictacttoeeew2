@@ -43,16 +43,16 @@ function cellPress(cell, board) {
     //check for which player
     if (cell.innerHTML === "") {
       //check if cell is empty
-      cell.innerHTML = "x";
-      cell.style.backgroundColor = "rgb(250,128,114)";
+      cell.innerHTML = "X";
+      cell.style.backgroundColor = "rgb(124,252,0)";
       roundTimer();
       move++;
     }
   } else {
     if (cell.innerHTML === "") {
       //check if cell is empty
-      cell.innerHTML = "o";
-      cell.style.backgroundColor = "rgb(124,252,0)";
+      cell.innerHTML = "O";
+      cell.style.backgroundColor = "rgb(250,128,114)";
       roundTimer();
       move++;
     }
